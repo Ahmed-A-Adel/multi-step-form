@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import App from "./components/app/App";
+import ErrorPage from "./components/errorPage/ErrorPage";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/sidebar/Sidebar";
 import Step1 from "./components/step-1/Step1";
@@ -28,6 +29,8 @@ const router = createBrowserRouter([
       { path: "/step-3", element: <Step3 /> },
       { path: "/step-4", element: <Step4 /> },
     ],
+
+    errorElement: <ErrorPage />,
   },
 ]);
 
