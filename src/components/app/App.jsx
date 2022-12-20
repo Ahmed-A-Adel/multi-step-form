@@ -1,5 +1,5 @@
 import "./App.scss";
-function App() {
+function App({ children }) {
   return <div className="app"></div>;
 }
 
