@@ -12,11 +12,11 @@ import Step4 from "./components/step-4/Step4";
 
 const Layout = () => {
   return (
-    <div className="app">
+    <App className="app">
       <Sidebar />
       <Outlet />
       <Footer />
-    </div>
+    </App>
   );
 };
 const router = createBrowserRouter([
