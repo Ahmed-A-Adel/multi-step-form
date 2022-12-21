@@ -1,3 +1,15 @@
 .step {
   background-color: gold;
 }
+@media screen and (max-width: 1140px) {
+  .step {
+    width: 90%;
+    height: 90%;
+
+    margin: auto;
+    margin-top: -15%;
+
+    background-color: gold;
+    border-radius: 10px;
+  }
+}
