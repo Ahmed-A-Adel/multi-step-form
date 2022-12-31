@@ -1,4 +1,5 @@
+@import "../app/App.scss";
 .sidebar {
-  background-color: aquamarine;
+  background-color: $primary-color;
   color: black;
 }
