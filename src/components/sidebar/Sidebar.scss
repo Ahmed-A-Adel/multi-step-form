@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 1.5rem;
-  background-color: $primary-color;
+  background: url(../../../assets/images/bg-sidebar-mobile.svg) no-repeat
+    center/cover;
   color: black;
 }
 @media screen and (min-width: 1140px) {
@@ -14,11 +15,13 @@
 
     padding-left: 5%;
     align-self: center;
-    justify-self: center;
+    justify-self: flex-end;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 
+    background: url(../../../assets/images/bg-sidebar-desktop.svg) no-repeat
+      center/cover;
     border-radius: $radius;
   }
 }

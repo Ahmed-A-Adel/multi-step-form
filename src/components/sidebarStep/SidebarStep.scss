@@ -33,6 +33,7 @@
 
   border: 1px solid $White;
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
 }
 .sidebarStep_info_number {
   font-size: 0.6rem;
@@ -42,6 +43,11 @@
   color: $White;
   font-weight: 300;
   font-size: 0.8rem;
+}
+// helper calsses
+.activ {
+  background-color: $Light-blue;
+  color: $secondary-color;
 }
 @media screen and (min-width: 1140px) {
   .sidebarStep {
