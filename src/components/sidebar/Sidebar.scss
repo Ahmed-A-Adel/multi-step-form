@@ -9,10 +9,16 @@
 }
 @media screen and (min-width: 1140px) {
   .sidebar {
+    width: 95%;
+    height: 95%;
+
+    padding-left: 5%;
+    align-self: center;
+    justify-self: center;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    row-gap: 1rem;
-    padding-left: 5%;
+
+    border-radius: $radius;
   }
 }

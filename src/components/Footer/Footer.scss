@@ -1,3 +1,5 @@
+@import "../app/App.scss";
 .footer {
-  background-color: olivedrab;
+  background-color: $White;
+  border: 1px solid orangered;
 }

@@ -1,5 +1,7 @@
+@import "../app/App.scss";
 .step {
-  background-color: gold;
+  background-color: $White;
+  border: 1px solid gold;
 }
 @media screen and (max-width: 1139px) {
   .step {
@@ -7,9 +9,9 @@
     height: 90%;
 
     margin: auto;
-    margin-top: -5.5rem;
+    margin-top: -4rem;
 
-    background-color: gold;
-    border-radius: 10px;
+    background-color: $White;
+    border-radius: $radius;
   }
 }
