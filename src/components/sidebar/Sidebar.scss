@@ -1,5 +1,18 @@
 @import "../app/App.scss";
 .sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1.5rem;
   background-color: $primary-color;
   color: black;
+}
+@media screen and (min-width: 1140px) {
+  .sidebar {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 1rem;
+    padding-left: 5%;
+  }
 }

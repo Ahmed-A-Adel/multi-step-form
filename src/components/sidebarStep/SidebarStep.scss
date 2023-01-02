@@ -1,0 +1,53 @@
+@import "../app/App.scss";
+.sidebarStep {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.sidebarStep_info_container {
+  display: none;
+}
+.sidebarStep_number_container {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+
+  color: $White;
+  background-color: transparent;
+}
+.sidebarStep_number {
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  font-size: 0.8rem;
+
+  border: 1px solid $White;
+  border-radius: 50%;
+}
+.sidebarStep_info_number {
+  font-size: 0.6rem;
+  color: $Cool-gray;
+}
+.sidebarStep_info_step {
+  color: $White;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+@media screen and (min-width: 1140px) {
+  .sidebarStep {
+    width: 100%;
+  }
+  .sidebarStep_info_container {
+    display: inline-block;
+  }
+}
