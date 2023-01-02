@@ -2,6 +2,7 @@
 .step {
   background-color: $White;
   border: 1px solid gold;
+  border-radius: $radius;
 }
 @media screen and (max-width: 1139px) {
   .step {
