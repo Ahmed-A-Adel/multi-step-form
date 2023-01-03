@@ -1,14 +1,29 @@
 @import "../app/App.scss";
 .step {
+  width: 80%;
+  height: 80%;
+
+  justify-self: center;
+  align-self: center;
+
   background-color: $White;
   border: 1px solid gold;
   border-radius: $radius;
+  & h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  & p {
+    font-size: 0.89rem;
+    color: $Cool-gray;
+  }
 }
 @media screen and (max-width: 1139px) {
   .step {
     width: 90%;
     height: 90%;
 
+    padding: 2rem 1rem;
     margin: auto;
     margin-top: -4rem;
 
