@@ -14,8 +14,27 @@
     margin-bottom: 1rem;
   }
   & p {
+    margin-bottom: 2rem;
     font-size: 0.89rem;
     color: $Cool-gray;
+  }
+  & input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid $Cool-gray;
+    outline: none;
+  }
+  & input:focus {
+    border: 1px solid $primary-color;
+  }
+  & label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+    color: $secondary-color;
   }
 }
 @media screen and (max-width: 1139px) {
@@ -29,5 +48,17 @@
 
     background-color: $White;
     border-radius: $radius;
+
+    & input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    & label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.8rem;
+    }
   }
 }
