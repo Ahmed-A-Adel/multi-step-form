@@ -1,7 +1,7 @@
 @import "../app/App.scss";
 .step {
   width: 80%;
-  height: 80%;
+  height: auto;
 
   justify-self: center;
   align-self: center;
@@ -40,7 +40,7 @@
 @media screen and (max-width: 1139px) {
   .step {
     width: 90%;
-    height: 90%;
+    height: auto;
 
     padding: 2rem 1rem;
     margin: auto;
