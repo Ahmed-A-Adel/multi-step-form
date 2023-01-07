@@ -8,9 +8,10 @@ $Light-gray: hsl(229, 24%, 87%);
 $Magnolia: hsl(217, 100%, 97%);
 $Alabaster: hsl(231, 100%, 99%);
 $White: hsl(0, 0%, 100%);
-$f-size: 16px;
+$f-size: 0.8rem;
 $f-family: "Lexend Deca", sans-serif;
 $radius: 10px;
+$trans: all 0.2s ease-in-out;
 
 * {
   padding: 0;
@@ -20,7 +21,7 @@ $radius: 10px;
 
 body {
   font-family: "Lexend Deca", sans-serif;
-  font-size: $f-size;
+  font-size: 16px;
   font-weight: 400;
 }
 .app {

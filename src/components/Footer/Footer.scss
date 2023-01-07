@@ -3,4 +3,45 @@
   background-color: $White;
   border: 1px solid orangered;
   border-radius: $radius;
+  display: flex;
+  align-items: center;
+}
+.btn {
+  height: auto;
+  width: 7rem;
+
+  display: inline-block;
+  padding: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: $f-size;
+  border-radius: 5px;
+  transition: $trans;
+}
+.btn-next {
+  margin-left: auto;
+  margin-right: 1rem;
+
+  background-color: $secondary-color;
+  color: $White;
+
+  &:hover {
+    background-color: hsl(213, 99%, 27%);
+  }
+}
+.btn-back {
+  margin-left: 1rem;
+  color: $Cool-gray;
+  &:hover {
+    color: $secondary-color;
+  }
+}
+@media screen and (min-width: 1140px) {
+  .btn-next {
+    margin-right: 10%;
+  }
+  .btn-back {
+    margin-left: 1.6rem;
+  }
 }

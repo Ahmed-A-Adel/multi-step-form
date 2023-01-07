@@ -33,7 +33,7 @@
 
   border: 1px solid $White;
   border-radius: 50%;
-  transition: all 0.2s ease-in-out;
+  transition: $trans;
 }
 .sidebarStep_info_number {
   font-size: 0.6rem;
