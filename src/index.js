@@ -24,10 +24,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { path: "/", element: <Step1 /> },
-      { path: "/step-2", element: <Step2 /> },
-      { path: "/step-3", element: <Step3 /> },
-      { path: "/step-4", element: <Step4 /> },
+      { path: "/", element: <Step1 />, errorElement: <ErrorPage /> },
+      { path: "/step-2", element: <Step2 />, errorElement: <ErrorPage /> },
+      { path: "/step-3", element: <Step3 />, errorElement: <ErrorPage /> },
+      { path: "/step-4", element: <Step4 />, errorElement: <ErrorPage /> },
     ],
 
     errorElement: <ErrorPage />,

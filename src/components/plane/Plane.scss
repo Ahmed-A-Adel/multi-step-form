@@ -1,0 +1,56 @@
+@import "../app/App.scss";
+.plane {
+  min-height: 4rem;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid $Cool-gray;
+  border-radius: $radius;
+  transition: $trans;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    border: 1px solid $primary-color;
+    background-color: $Alabaster;
+  }
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  & h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $secondary-color;
+    text-transform: capitalize;
+  }
+  & p {
+    font-size: 0.7rem;
+    color: $Cool-gray;
+    font-weight: 300;
+  }
+  & h5 {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: $secondary-color;
+  }
+}
+.plane_img {
+  width: 2rem;
+  height: 2rem;
+}
+@media screen and (min-width: 1139px) {
+  .plane {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .plane_img {
+    margin-bottom: 1rem;
+  }
+  .plane_info {
+    min-height: 3.5rem;
+  }
+}

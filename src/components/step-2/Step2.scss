@@ -1,0 +1,11 @@
+@import "../app/App.scss";
+@media screen and (min-width: 1139px) {
+  .step-2 {
+    display: flex;
+    flex-direction: column;
+    &_planes {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
