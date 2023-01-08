@@ -1,4 +1,7 @@
 @import "../app/App.scss";
+.step-2_planes {
+  margin-bottom: 1rem;
+}
 @media screen and (min-width: 1139px) {
   .step-2 {
     display: flex;
@@ -6,6 +9,7 @@
     &_planes {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 2rem;
     }
   }
 }

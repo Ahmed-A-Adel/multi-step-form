@@ -1,6 +1,6 @@
 @import "../app/App.scss";
 .plane {
-  min-height: 4rem;
+  min-height: 3rem;
   display: flex;
   gap: 1rem;
   padding: 1rem;
@@ -40,6 +40,7 @@
 .plane_img {
   width: 2rem;
   height: 2rem;
+  align-self: center;
 }
 @media screen and (min-width: 1139px) {
   .plane {
@@ -49,6 +50,7 @@
   }
   .plane_img {
     margin-bottom: 1rem;
+    align-self: flex-start;
   }
   .plane_info {
     min-height: 3.5rem;

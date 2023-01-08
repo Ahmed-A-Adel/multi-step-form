@@ -1,6 +1,7 @@
 import React from "react";
 import Plane from "../plane/Plane";
 import Heading from "../heading/Heading";
+import Switcher from "../switcher/Switcher";
 import "./Step2.scss";
 function Step2() {
   const imges = [
@@ -22,6 +23,7 @@ function Step2() {
           <Plane url={img} />
         ))}
       </div>
+      <Switcher />
     </div>
   );
 }

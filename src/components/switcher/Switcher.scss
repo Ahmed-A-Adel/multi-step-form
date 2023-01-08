@@ -1,0 +1,27 @@
+@import "../app/App.scss";
+.switcher {
+  display: flex;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-transform: capitalize;
+  border-radius: $radius;
+  background-color: $Magnolia;
+  & span {
+    font-size: $f-size;
+  }
+}
+.switcher_container {
+  background-color: $secondary-color;
+  width: 3rem;
+  border-radius: 2rem;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.switcher_container_ball {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: $White;
+}
