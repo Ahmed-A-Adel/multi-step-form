@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Heading from "../heading/Heading";
 import useInput from "../../hooks/useInput";
 import "./Step1.scss";
 function Step1() {
@@ -32,8 +33,10 @@ function Step1() {
 
   return (
     <div className="step">
-      <h2 className="step_heading">{stepInfo[1].heading}</h2>
-      <p className="step_text">{stepInfo[1].paragraph}</p>
+      <Heading
+        heading={stepInfo[1].heading}
+        subHeading={stepInfo[1].paragraph}
+      />
       <form>
         <label htmlFor="name">Name</label>
         <input

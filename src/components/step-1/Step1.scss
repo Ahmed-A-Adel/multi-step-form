@@ -9,15 +9,7 @@
   background-color: $White;
   border: 1px solid gold;
   border-radius: $radius;
-  & h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  & p {
-    margin-bottom: 2rem;
-    font-size: 0.89rem;
-    color: $Cool-gray;
-  }
+
   & input {
     width: 100%;
     padding: 0.5rem;
