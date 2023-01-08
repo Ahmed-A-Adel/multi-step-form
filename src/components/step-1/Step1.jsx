@@ -32,7 +32,7 @@ function Step1() {
   const [phoneValue, handlePhone] = useInput("");
 
   return (
-    <div className="step">
+    <div className="step step-1">
       <Heading
         heading={stepInfo[1].heading}
         subHeading={stepInfo[1].paragraph}

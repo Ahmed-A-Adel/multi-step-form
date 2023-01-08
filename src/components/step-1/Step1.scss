@@ -1,15 +1,5 @@
 @import "../app/App.scss";
-.step {
-  width: 80%;
-  height: auto;
-
-  justify-self: center;
-  align-self: center;
-
-  background-color: $White;
-  border: 1px solid gold;
-  border-radius: $radius;
-
+.step-1 {
   & input {
     width: 100%;
     padding: 0.5rem;
@@ -30,17 +20,7 @@
   }
 }
 @media screen and (max-width: 1139px) {
-  .step {
-    width: 90%;
-    height: auto;
-
-    padding: 2rem 1rem;
-    margin: auto;
-    margin-top: -4rem;
-
-    background-color: $White;
-    border-radius: $radius;
-
+  .step-1 {
     & input {
       width: 100%;
       padding: 0.5rem;

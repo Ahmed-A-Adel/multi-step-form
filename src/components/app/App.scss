@@ -43,6 +43,19 @@ body {
     border-radius: $radius;
   }
 }
+// Components General Styles Goes Here :)
+.step {
+  width: 80%;
+  min-height: 80%;
+  // height: auto;
+
+  justify-self: center;
+  align-self: center;
+
+  background-color: $White;
+  border: 1px solid gold;
+  border-radius: $radius;
+}
 @media screen and (min-width: 1140px) {
   .app_container {
     height: 80vh;
@@ -58,5 +71,18 @@ body {
     grid-row: 1/-1;
 
     font-size: 2rem;
+  }
+}
+@media screen and (max-width: 1139px) {
+  .step {
+    width: 90%;
+    // height: auto;
+
+    padding: 2rem 1rem;
+    margin: auto;
+    margin-top: -4rem;
+
+    background-color: $White;
+    border-radius: $radius;
   }
 }
