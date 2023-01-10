@@ -1,0 +1,52 @@
+@import "../app/App.scss";
+.summary {
+  text-transform: capitalize;
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: $Alabaster;
+    border-radius: $radius;
+  }
+  &_line {
+    width: 100%;
+    height: 1px;
+    background-color: $Cool-gray;
+  }
+  &_plane {
+    display: flex;
+    justify-content: space-between;
+    color: $secondary-color;
+    & span {
+      font-size: 0.9rem;
+    }
+  }
+  &_add-ones {
+    display: flex;
+    justify-content: space-between;
+    color: $Cool-gray;
+    font-size: $f-size;
+    & span {
+      color: $secondary-color;
+      font-weight: 300;
+    }
+  }
+  & a {
+    font-size: $f-size;
+    color: $Cool-gray;
+    margin-bottom: 1rem;
+  }
+  &_total {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: $f-size;
+    color: $Cool-gray;
+    & span {
+      font-size: 1rem;
+      color: $primary-color;
+      font-weight: 500;
+    }
+  }
+}
