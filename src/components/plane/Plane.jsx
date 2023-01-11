@@ -1,14 +1,9 @@
 import React from "react";
 import "./Plane.scss";
-function Plane({ url }) {
+function Plane({ imgNumber }) {
   return (
     <div className="plane">
-      <div
-        className="plane_img"
-        style={{
-          background: url,
-        }}
-      ></div>
+      <div className={`plane_img img-${imgNumber}`}></div>
       <div className="plane_info">
         <h4>aracd</h4>
         <p>$150/yr</p>
