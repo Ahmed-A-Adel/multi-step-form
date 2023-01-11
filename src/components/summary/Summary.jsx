@@ -9,8 +9,8 @@ function Summary({ plane, addOnes }) {
   // ----------------------------------------------------------------
   const summaryPlanePrice = `$${plane.price}/${plane.time.slice(0, 2)}`;
   // ----------------------------------------------------------------
-  const addOnesElements = addOnes.map((add) => (
-    <div className="summary_add-ones">
+  const addOnesElements = addOnes.map((add, i) => (
+    <div className="summary_add-ones" key={add.name + i}>
       <p>{add.name}</p>
       <span>{`+$${add.price}/${plane.time.slice(0, 2)}`}</span>
     </div>
