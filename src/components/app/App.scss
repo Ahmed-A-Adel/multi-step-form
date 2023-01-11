@@ -39,7 +39,6 @@ body {
     grid-template-rows: 25% 1fr 10%;
 
     background-color: $Alabaster;
-    border: 1px solid greenyellow;
     border-radius: $radius;
   }
 }
@@ -47,13 +46,11 @@ body {
 .step {
   width: 80%;
   min-height: 80%;
-  // height: auto;
 
   justify-self: center;
   align-self: center;
 
   background-color: $White;
-  border: 1px solid gold;
   border-radius: $radius;
 }
 @media screen and (min-width: 1140px) {
