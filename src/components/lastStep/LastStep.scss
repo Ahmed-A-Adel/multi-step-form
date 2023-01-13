@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
   text-align: center;
+  line-height: 1.5rem;
 }
 .last-step_img {
   background: url(../../../assets/images/icon-thank-you.svg) center/cover
     no-repeat;
   width: 4rem;
   height: 4rem;
+  margin-bottom: 2rem;
 }
