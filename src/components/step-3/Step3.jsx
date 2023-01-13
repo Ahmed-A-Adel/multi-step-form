@@ -28,7 +28,12 @@ function Step3() {
         subHeading="Add-ons help enhance your gaming experience."
       />
       {info.map((info) => (
-        <Checker title={info.title} info={info.info} price={info.price} />
+        <Checker
+          key={info.title}
+          title={info.title}
+          info={info.info}
+          price={info.price}
+        />
       ))}
     </div>
   );

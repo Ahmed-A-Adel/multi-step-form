@@ -12,9 +12,9 @@ function Step2() {
     <div className="step step-2">
       <Heading heading={info.heading} subHeading={info.paragraph} />
       <div className="step-2_planes">
-        <Plane imgNumber={1} />
-        <Plane imgNumber={2} />
-        <Plane imgNumber={3} />
+        <Plane imgNumber={1} key={1} />
+        <Plane imgNumber={2} key={2} />
+        <Plane imgNumber={3} key={3} />
       </div>
       <Switcher />
     </div>
