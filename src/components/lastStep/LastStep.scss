@@ -1,0 +1,14 @@
+.last-step {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.last-step_img {
+  background: url(../../../assets/images/icon-thank-you.svg) center/cover
+    no-repeat;
+  width: 4rem;
+  height: 4rem;
+}
