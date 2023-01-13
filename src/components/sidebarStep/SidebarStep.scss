@@ -45,9 +45,10 @@
   font-size: 0.8rem;
 }
 // helper calsses
-.activ {
+.active {
   background-color: $Light-blue;
   color: $secondary-color;
+  border: 1px solid $Light-blue;
 }
 @media screen and (min-width: 1140px) {
   .sidebarStep {

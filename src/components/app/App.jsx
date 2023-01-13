@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="app">
       <div className="app_container">
-        <Sidebar />
+        <Sidebar step={state.step} />
         <Outlet />
         <Footer
           step={state.step}
