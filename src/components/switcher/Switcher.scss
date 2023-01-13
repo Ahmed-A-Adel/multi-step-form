@@ -8,6 +8,7 @@
   text-transform: capitalize;
   border-radius: $radius;
   background-color: $Magnolia;
+  transition: all 5s ease-in-out;
   & span {
     font-size: $f-size;
   }
@@ -24,4 +25,8 @@
   height: 0.8rem;
   border-radius: 50%;
   background-color: $White;
+  transition: all 0.1s ease-out;
+}
+.switcher_right {
+  transform: translateX(200%);
 }
