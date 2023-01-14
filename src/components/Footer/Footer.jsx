@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
-function Footer({ step, handleLastStep, handleNextStep }) {
+function Footer({ state, dispatch }) {
   return (
     <div className="footer">
-      {step !== "/" && (
-        <Link className="btn btn-back" onClick={handleLastStep}>
+      {state.step !== "/" && (
+        <Link
+          className="btn btn-back"
+          onClick={(event) => dispatch({ type: "BACK", event })}
+        >
           go back
         </Link>
       )}
-      {step !== "/step-5" && (
-        <Link className="btn btn-next" onClick={handleNextStep}>
+      {state.step !== "/step-5" && (
+        <Link
+          className="btn btn-next"
+          onClick={(event) => dispatch({ type: "NEXT", event })}
+        >
           next step
         </Link>
       )}

@@ -1,7 +1,8 @@
 import React from "react";
 import "./Sidebar.scss";
 import SidebarStep from "../sidebarStep/SidebarStep";
-function Sidebar({ step }) {
+function Sidebar({ state }) {
+  const { step } = state;
   return (
     <div className="sidebar">
       <SidebarStep key={1} step={step} number={1} stepInfo="your inofo" />
