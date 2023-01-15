@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { Outlet, useNavigate } from "react-router";
 import Sidebar from "../sidebar/Sidebar";
 import Footer from "../Footer/Footer";
