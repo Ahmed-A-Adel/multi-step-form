@@ -1,13 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Heading from "../heading/Heading";
 import useInput from "../../hooks/useInput";
+import { stepsContext } from "../StepsProvider";
 import "./Step1.scss";
 function Step1() {
   const [inputValue, handleInput] = useInput("");
   const [emailValue, handleEmail] = useInput("");
   const [phoneValue, handlePhone] = useInput("");
-
+  const contextValue = useContext(stepsContext);
   return (
     <div className="step step-1">
       <Heading
@@ -24,6 +25,7 @@ function Step1() {
           value={inputValue}
           onChange={handleInput}
           placeholder="e.g. Ahmed A Adel"
+          required
         />
 
         <label htmlFor="email">Email Address</label>
@@ -33,6 +35,7 @@ function Step1() {
           value={emailValue}
           onChange={handleEmail}
           placeholder="e.g. ahmedadel.personalemail@gmail.com"
+          required
         />
 
         <label htmlFor="phone">Phone Number</label>
@@ -42,8 +45,10 @@ function Step1() {
           value={phoneValue}
           onChange={handlePhone}
           placeholder="e.g. +20-1 234 567 89"
+          required
         />
       </form>
+      {/* <Footer /> */}
     </div>
   );
 }

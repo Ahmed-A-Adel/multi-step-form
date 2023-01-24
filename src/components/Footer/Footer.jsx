@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { stepsContext } from "../StepsProvider";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
-function Footer({ state, dispatch }) {
+function Footer() {
+  const { state, dispatch } = useContext(stepsContext);
+
   return (
     <div className="footer">
       {state.step !== "/" && (

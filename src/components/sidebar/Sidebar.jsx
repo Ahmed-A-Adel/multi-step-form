@@ -1,8 +1,11 @@
-import React from "react";
-import "./Sidebar.scss";
+import React, { useContext } from "react";
 import SidebarStep from "../sidebarStep/SidebarStep";
-function Sidebar({ state }) {
+import { stepsContext } from "../StepsProvider";
+import "./Sidebar.scss";
+function Sidebar() {
+  const { state } = useContext(stepsContext);
   const { step } = state;
+
   return (
     <div className="sidebar">
       <SidebarStep key={1} step={step} number={1} stepInfo="your inofo" />

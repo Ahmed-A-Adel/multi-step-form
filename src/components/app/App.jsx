@@ -1,27 +1,21 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useContext } from "react";
 import { Outlet, useNavigate } from "react-router";
+import { stepsContext } from "../StepsProvider";
 import Sidebar from "../sidebar/Sidebar";
 import Footer from "../Footer/Footer";
-import Reducer from "../Reducer";
 import "./App.scss";
 function App() {
-  // __________ Varibels __________________________________
-
+  // _________________ Varibels __________________________________
+  const { state, dispatch } = useContext(stepsContext);
   const navigate = useNavigate();
-  const initialValue = {
-    step: "/",
-    userInfo: {},
-    plane: {},
-    addOnes: [],
-  };
-  const [state, dispatch] = useReducer(Reducer, initialValue);
-  // __________ Varibels __________________________________
+  // _________________ Varibels __________________________________
 
+  // ___________________ Hooks ___________________________________
   useEffect(() => {
     navigate(state.step);
   }, [state.step]);
+  // ___________________ Hooks ___________________________________
 
-  // _____________________ Functions _______________________________
   return (
     <div className="app">
       <div className="app_container">
