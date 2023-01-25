@@ -1,6 +1,7 @@
 function Reducer(state, action) {
   switch (action.type) {
     case "NEXT": {
+      console.log("next step");
       action.event.preventDefault();
 
       const currentStep =

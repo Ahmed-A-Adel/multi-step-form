@@ -21,7 +21,7 @@ function App() {
       <div className="app_container">
         <Sidebar state={state} />
         <Outlet />
-        <Footer state={state} dispatch={dispatch} />
+        {/* <Footer state={state} dispatch={dispatch} /> */}
       </div>
     </div>
   );

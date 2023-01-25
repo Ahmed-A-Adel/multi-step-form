@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Step3.scss";
 import Heading from "../heading/Heading";
 import Checker from "../checker/Checker";
+import { stepsContext } from "../StepsProvider";
+import Button from "../button/Button";
 
 function Step3() {
+  const { state, dispatch } = useContext(stepsContext);
+
   const info = [
     {
       title: " Online service",
@@ -35,6 +39,22 @@ function Step3() {
           price={info.price}
         />
       ))}
+      <div className="btn_container">
+        <Button
+          handleClick={(event) => dispatch({ type: "BACK", event })}
+          className="btn-back btn"
+          type="submit"
+        >
+          go back
+        </Button>
+        <Button
+          handleClick={(event) => dispatch({ type: "NEXT", event })}
+          className="btn-next btn"
+          type="submit"
+        >
+          next step
+        </Button>
+      </div>
     </div>
   );
 }
