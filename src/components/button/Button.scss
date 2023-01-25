@@ -1,0 +1,56 @@
+@import "../app/App.scss";
+.btn {
+  height: auto;
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 0.8rem;
+
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: $f-size;
+  border-radius: 7px;
+  border: none;
+  transition: $trans;
+}
+.btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+
+  background-color: $White;
+}
+
+.btn-next {
+  width: 7rem;
+  margin-left: auto;
+
+  background-color: $secondary-color;
+  color: $White;
+
+  &:hover {
+    background-color: hsl(213, 99%, 27%);
+  }
+}
+.btn-back {
+  background-color: transparent;
+  color: $Cool-gray;
+  &:hover {
+    color: $secondary-color;
+  }
+}
+@media screen and (max-width: 1139px) {
+  .btn {
+    align-self: center;
+  }
+  .btn_container {
+    position: absolute;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    padding: 2.5% 5%;
+  }
+}
