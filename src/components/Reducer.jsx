@@ -13,7 +13,7 @@ function Reducer(state, action) {
       const currentStep =
         state.step === "/step-2" ? "/" : `/step-${+state.step.slice(-1) - 1}`;
 
-      return { ...action.state, step: currentStep };
+      return { ...state, step: currentStep };
     }
   }
 }
