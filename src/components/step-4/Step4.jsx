@@ -6,6 +6,8 @@ import Summary from "../summary/Summary";
 import "./Step4.scss";
 function Step4() {
   const { state, dispatch } = useContext(stepsContext);
+  const { plane, addOnes } = state;
+  const planePrice = plane.plane.money[plane.subs];
 
   return (
     <div className="step step-4">
@@ -14,11 +16,13 @@ function Step4() {
         subHeading={" Double-check everything looks OK before confirming."}
       />
       <Summary
-        plane={{ name: "arcade", price: 9, time: "monthly" }}
-        addOnes={[
-          { name: "online service", price: 1 },
-          { name: "larger storage", price: 2 },
-        ]}
+        send={dispatch}
+        plane={{
+          name: plane.plane.name,
+          price: planePrice,
+          time: plane.subs === "mo" ? "monthly" : "yearly",
+        }}
+        addOnes={addOnes}
       />
       <div className="btn_container">
         <Button
@@ -29,7 +33,7 @@ function Step4() {
           go back
         </Button>
         <Button
-          handleClick={(event) => dispatch({ type: "NEXT", event })}
+          handleClick={(event) => dispatch({ type: "NEXT", event, state })}
           className="btn-next btn"
           type="submit"
         >

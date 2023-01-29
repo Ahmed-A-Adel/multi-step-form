@@ -3,16 +3,17 @@ import { Link } from "react-router-dom";
 import "./Summary.scss";
 function Summary({ plane, addOnes }) {
   // ___________________________________________________________________
-  const total = plane.price + addOnes[0].price + addOnes[1].price;
+  const total =
+    plane.price + addOnes?.reduce((prev, cur) => prev + cur.priceValue, 0);
   // ----------------------------------------------------------------
   const summaryPlaneHead = ` ${plane.name} (${plane.time})`;
   // ----------------------------------------------------------------
   const summaryPlanePrice = `$${plane.price}/${plane.time.slice(0, 2)}`;
   // ----------------------------------------------------------------
-  const addOnesElements = addOnes.map((add, i) => (
-    <div className="summary_add-ones" key={add.name + i}>
-      <p>{add.name}</p>
-      <span>{`+$${add.price}/${plane.time.slice(0, 2)}`}</span>
+  const addOnesElements = addOnes?.map((add, i) => (
+    <div className="summary_add-ones" key={add.title + i}>
+      <p>{add.title}</p>
+      <span>{`+$${add.priceValue}/${plane.time.slice(0, 2)}`}</span>
     </div>
   ));
   // ----------------------------------------------------------------
