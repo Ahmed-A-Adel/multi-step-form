@@ -1,11 +1,13 @@
+import Validatoer from "./helpers/Validatoer";
 function Reducer(state, action) {
   switch (action.type) {
     case "NEXT": {
       action.event.preventDefault();
-
       const currentStep =
         state.step === "/" ? "/step-2" : `/step-${+state.step.slice(-1) + 1}`;
-      return { ...action.state, step: currentStep };
+      return Validatoer(action.state.userInfo)
+        ? { ...action.state, step: currentStep }
+        : { ...state };
     }
     case "BACK": {
       action.event.preventDefault();
