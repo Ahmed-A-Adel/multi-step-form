@@ -15,6 +15,11 @@ function Reducer(state, action) {
 
       return { ...state, step: currentStep };
     }
+    case "TO-PLANE": {
+      action.event.preventDefault();
+
+      return { ...state, step: "/step-2" };
+    }
   }
 }
 export default Reducer;
