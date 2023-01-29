@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Summary.scss";
-function Summary({ plane, addOnes }) {
+function Summary({ plane, addOnes, dispatch }) {
   // ___________________________________________________________________
   const total =
     plane.price + addOnes?.reduce((prev, cur) => prev + cur.priceValue, 0);
@@ -29,7 +29,9 @@ function Summary({ plane, addOnes }) {
           <h5> {summaryPlaneHead}</h5>
           <span className="summary_plane_price">{summaryPlanePrice}</span>
         </div>
-        <Link>change</Link>
+        <Link onClick={(event) => dispatch({ type: "TO-PLANE", event })}>
+          change
+        </Link>
         <div className="summary_line"></div>
         {addOnesElements}
       </div>

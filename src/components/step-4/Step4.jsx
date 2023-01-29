@@ -23,6 +23,7 @@ function Step4() {
           time: plane.subs === "mo" ? "monthly" : "yearly",
         }}
         addOnes={addOnes}
+        dispatch={dispatch}
       />
       <div className="btn_container">
         <Button
