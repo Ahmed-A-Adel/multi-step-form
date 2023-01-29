@@ -10,6 +10,7 @@ function Step1() {
   const [emailValue, handleEmail] = useInput("");
   const [phoneValue, handlePhone] = useInput("");
   const { dispatch, state } = useContext(stepsContext);
+
   return (
     <div className="step step-1">
       <Heading
@@ -18,10 +19,7 @@ function Step1() {
           " Please provide your name, email address, and phone number."
         }
       />
-      <form
-        className="form"
-        onSubmit={(event) => dispatch({ type: "NEXT", event })}
-      >
+      <form className="form">
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -51,7 +49,20 @@ function Step1() {
       </form>
       <div className="btn_container">
         <Button
-          handleClick={(event) => dispatch({ type: "NEXT", event })}
+          handleClick={(event) =>
+            dispatch({
+              type: "NEXT",
+              event,
+              state: {
+                ...state,
+                userInfo: {
+                  name: inputValue,
+                  email: emailValue,
+                  phone: phoneValue,
+                },
+              },
+            })
+          }
           className="btn-next btn"
           type="submit"
         >

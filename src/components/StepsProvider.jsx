@@ -6,9 +6,9 @@ export default function StepsProvider({ children }) {
   const initialValue = {
     step: "/",
     userInfo: {
-      name: "Ahmed",
-      email: "ahmedAdel.email@gmail.com",
-      phone: "0124556789",
+      name: "",
+      email: "",
+      phone: "",
     },
     plane: {},
     addOnes: [],

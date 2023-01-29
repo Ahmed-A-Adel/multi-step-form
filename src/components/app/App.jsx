@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="app">
       <div className="app_container">
-        <Sidebar state={state} />
+        <Sidebar />
         <Outlet />
         {/* <Footer state={state} dispatch={dispatch} /> */}
       </div>
