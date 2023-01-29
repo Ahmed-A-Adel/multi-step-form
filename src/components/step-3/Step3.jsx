@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Step3.scss";
 import Heading from "../heading/Heading";
 import Checker from "../checker/Checker";
@@ -7,24 +7,30 @@ import Button from "../button/Button";
 
 function Step3() {
   const { state, dispatch } = useContext(stepsContext);
-
+  const [addOnes, setAddOnes] = useState([]);
   const info = [
     {
       title: " Online service",
       info: "Access to multiplayer games ",
-      price: "+$1/mo",
+      price: { mo: 1, yr: 10 },
     },
     {
       title: "Larger storage",
       info: " Extra 1TB of cloud save ",
-      price: "+$2/mo",
+      price: { mo: 2, yr: 20 },
     },
     {
       title: "Customizable Profile",
       info: " Custom theme on your profile ",
-      price: "+$2/mo",
+      price: { mo: 2, yr: 20 },
     },
   ];
+  // ___________ Function ___________________________
+  const handleChecker = (data) => {
+    setAddOnes([...addOnes, data]);
+  };
+  // ___________ Function ___________________________
+
   return (
     <div className="step step-3">
       <Heading
@@ -37,18 +43,22 @@ function Step3() {
           title={info.title}
           info={info.info}
           price={info.price}
+          handleClick={handleChecker}
+          subs={state.plane.subs}
         />
       ))}
       <div className="btn_container">
         <Button
           handleClick={(event) => dispatch({ type: "BACK", event })}
           className="btn-back btn"
-          type="submit"
+          type="button"
         >
           go back
         </Button>
         <Button
-          handleClick={(event) => dispatch({ type: "NEXT", event })}
+          handleClick={(event) =>
+            dispatch({ type: "NEXT", event, state: { ...state, addOnes } })
+          }
           className="btn-next btn"
           type="submit"
         >
