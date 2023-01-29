@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { stepsContext } from "../StepsProvider";
 import Plane from "../plane/Plane";
 import Heading from "../heading/Heading";
@@ -7,19 +7,49 @@ import Button from "../button/Button";
 import "./Step2.scss";
 function Step2() {
   const { state, dispatch } = useContext(stepsContext);
-  const info = {
-    heading: "  Select your plan",
-    paragraph: " You have the option of monthly or yearly billing. ",
-  };
+  const [toggle, setToggle] = useState(false);
+
+  const [planeInfo, setplaneInfo] = useState({
+    plane: "",
+    subs: "mo",
+    planes: [
+      { name: "arcade", money: { mo: 9, yr: 90 } },
+      { name: "advance", money: { mo: 12, yr: 120 } },
+      { name: "pro", money: { mo: 15, yr: 150 } },
+    ],
+  });
+  // __________________ Function _______________________
+  function selectPlane(planeName) {
+    const currentPlane = planeInfo.planes.filter(
+      (plane) => plane.name === planeName
+    );
+    setplaneInfo({ ...planeInfo, plane: currentPlane[0] });
+  }
+  function toggleSwitch() {
+    setToggle(!toggle);
+    setplaneInfo({ ...planeInfo, subs: planeInfo.subs === "mo" ? "yr" : "mo" });
+  }
+  // __________________ Function _______________________
+
   return (
     <div className="step step-2">
-      <Heading heading={info.heading} subHeading={info.paragraph} />
+      <Heading
+        heading="  Select your plan"
+        subHeading=" You have the option of monthly or yearly billing. "
+      />
       <div className="step-2_planes">
-        <Plane imgNumber={1} key={1} />
-        <Plane imgNumber={2} key={2} />
-        <Plane imgNumber={3} key={3} />
+        {planeInfo.planes.map((plane, i) => (
+          <Plane
+            name={plane.name}
+            money={plane.money[planeInfo.subs]}
+            subs={planeInfo.subs}
+            imgNumber={i + 1}
+            key={i + 1}
+            handleClick={selectPlane}
+          />
+        ))}
       </div>
-      <Switcher />
+      <Switcher handleClick={toggleSwitch} toggleValue={toggle} />
       <div className="btn_container">
         <Button
           handleClick={(event) => dispatch({ type: "BACK", event })}
@@ -29,7 +59,13 @@ function Step2() {
           go back
         </Button>
         <Button
-          handleClick={(event) => dispatch({ type: "NEXT", event })}
+          handleClick={(event) =>
+            dispatch({
+              type: "NEXT",
+              event,
+              state: { ...state, plane: planeInfo },
+            })
+          }
           className="btn-next btn"
           type="submit"
         >
