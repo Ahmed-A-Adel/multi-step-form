@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import Heading from "../heading/Heading";
-import useInput from "../../hooks/useInput";
+import FormInput from "../formInput/FormInput";
 import { stepsContext } from "../StepsProvider";
 import "./Step1.scss";
 import Button from "../button/Button";
@@ -11,7 +11,26 @@ function Step1() {
     email: "",
     phone: "",
   });
-  const formElementsData = [{ name: "user name" }];
+  const formElementsData = [
+    {
+      name: "name",
+      label: "Name",
+      placeholder: "e.g. Ahmed A Adel",
+      type: "text",
+    },
+    {
+      name: "email",
+      label: "Email Address",
+      placeholder: "e.g. ahmedadel.personalemail@gmail.com",
+      type: "email",
+    },
+    {
+      name: "phone",
+      label: "Phone Number",
+      placeholder: "e.g. +20-1 234 567 89",
+      type: "text",
+    },
+  ];
   const { dispatch, state } = useContext(stepsContext);
   // __________ Functions ________________________________
   const handleChange = (e) =>
@@ -27,35 +46,14 @@ function Step1() {
         }
       />
       <form className="form">
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          name="name"
-          type={"text"}
-          value={formValues.name}
-          onChange={handleChange}
-          placeholder="e.g. Ahmed A Adel"
-        />
-
-        <label htmlFor="email">Email Address</label>
-        <input
-          id="email"
-          name="email"
-          type={"email"}
-          value={formValues.email}
-          onChange={handleChange}
-          placeholder="e.g. ahmedadel.personalemail@gmail.com"
-        />
-
-        <label htmlFor="phone">Phone Number</label>
-        <input
-          id="phone"
-          name="phone"
-          type={"text"}
-          value={formValues.phone}
-          onChange={handleChange}
-          placeholder="e.g. +20-1 234 567 89"
-        />
+        {formElementsData.map((input) => (
+          <FormInput
+            input={input}
+            handleChange={handleChange}
+            formValues={formValues}
+            key={input.name}
+          />
+        ))}
       </form>
       <div className="btn_container">
         <Button
@@ -65,11 +63,7 @@ function Step1() {
               event,
               state: {
                 ...state,
-                userInfo: {
-                  name: inputValue,
-                  email: emailValue,
-                  phone: phoneValue,
-                },
+                userInfo: formValues,
               },
             })
           }
