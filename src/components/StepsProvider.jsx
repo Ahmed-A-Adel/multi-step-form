@@ -5,6 +5,8 @@ export const stepsContext = createContext();
 export default function StepsProvider({ children }) {
   const initialValue = {
     step: "/",
+    nextStep: false,
+    errorMessage: [],
     userInfo: {
       name: "",
       email: "",

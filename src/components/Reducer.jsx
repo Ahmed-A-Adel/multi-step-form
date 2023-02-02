@@ -5,9 +5,10 @@ function Reducer(state, action) {
       action.event.preventDefault();
       const currentStep =
         state.step === "/" ? "/step-2" : `/step-${+state.step.slice(-1) + 1}`;
-      return Validatoer(action.state.userInfo)
-        ? { ...action.state, step: currentStep }
-        : { ...state };
+      const vaildData = Validatoer(action.state.userInfo);
+      return vaildData
+        ? { ...state, errorMessage: vaildData }
+        : { ...action.state, step: currentStep, errorMessage: vaildData };
     }
     case "BACK": {
       action.event.preventDefault();
@@ -21,6 +22,9 @@ function Reducer(state, action) {
       action.event.preventDefault();
 
       return { ...state, step: "/step-2" };
+    }
+    case "SET-NEXT-STEP": {
+      return { ...action.state };
     }
   }
 }

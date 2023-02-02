@@ -15,26 +15,36 @@ function Step1() {
     {
       name: "name",
       label: "Name",
-      placeholder: "e.g. Ahmed A Adel",
+      required: true,
+      pattern: "^[A-Za-z0-9]{5,15}$",
+      placeholder: "e.g. AhmedAAdel",
       type: "text",
+      error:
+        "user name should be 5-15 and should'nt include any special charachters",
     },
     {
       name: "email",
       label: "Email Address",
+      required: true,
       placeholder: "e.g. ahmedadel.personalemail@gmail.com",
       type: "email",
+      error: "use vaild email",
     },
     {
       name: "phone",
       label: "Phone Number",
-      placeholder: "e.g. +20-1 234 567 89",
-      type: "text",
+      required: true,
+      placeholder: "e.g. +20-11 234 567 89",
+      type: "tel",
+      pattern: "[0-9]{2} [0-9]{10}",
+      error: "Format: 20 12345678910",
     },
   ];
   const { dispatch, state } = useContext(stepsContext);
   // __________ Functions ________________________________
   const handleChange = (e) =>
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  // -----------------------------------------------------
 
   // __________ Functions ________________________________
   return (
@@ -52,6 +62,8 @@ function Step1() {
             handleChange={handleChange}
             formValues={formValues}
             key={input.name}
+            dispatch={dispatch}
+            state={state}
           />
         ))}
       </form>
