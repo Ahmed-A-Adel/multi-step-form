@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Plane.scss";
-function Plane({ imgNumber, name, money, subs, handleClick }) {
+function Plane({ imgNumber, name, money, subs, handleClick, plane }) {
+  const active = plane.name === name ? true : false;
   return (
-    <div className="plane" onClick={(e) => handleClick(name)}>
+    <div
+      className={`plane ${active && "plane-active"}`}
+      onClick={(e) => {
+        handleClick(name);
+      }}
+    >
       <div className={`plane_img img-${imgNumber}`}></div>
       <div className="plane_info">
         <h4>{name}</h4>

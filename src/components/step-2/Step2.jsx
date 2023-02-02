@@ -46,6 +46,7 @@ function Step2() {
             imgNumber={i + 1}
             key={i + 1}
             handleClick={selectPlane}
+            plane={planeInfo.plane}
           />
         ))}
       </div>

@@ -1,6 +1,6 @@
 @import "../app/App.scss";
 .plane {
-  min-height: 3rem;
+  min-width: 7.9rem;
   display: flex;
   gap: 1rem;
   padding: 1rem;
@@ -10,10 +10,8 @@
   transition: $trans;
   cursor: pointer;
 
-  &:hover,
-  &:active {
+  &:hover {
     border: 1px solid $primary-color;
-    background-color: $Alabaster;
   }
   &_info {
     display: flex;
@@ -49,11 +47,11 @@
     align-items: flex-start;
   }
   .plane_img {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     align-self: flex-start;
   }
   .plane_info {
-    min-height: 3.5rem;
+    min-height: fit-content;
   }
 }
 .img-1 {
@@ -65,4 +63,8 @@
 }
 .img-3 {
   background: url(../../../assets/images/icon-pro.svg) center/cover no-repeat;
+}
+.plane-active {
+  border: 1px solid $primary-color;
+  background-color: $Alabaster;
 }
