@@ -1,0 +1,17 @@
+.form-input_error {
+  font-size: 0.8rem;
+  color: red;
+  text-transform: capitalize;
+  display: inline-block;
+  //   padding-bottom: 0.5rem;
+  display: none;
+}
+input {
+  border: 1px solid transparent;
+}
+input:invalid[foucsed="true"] {
+  border: 1px solid red;
+}
+input:invalid[foucsed="true"] ~ span {
+  display: block;
+}
