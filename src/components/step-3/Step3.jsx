@@ -45,6 +45,7 @@ function Step3() {
           price={info.price}
           handleClick={handleChecker}
           subs={state.plane.subs}
+          addOnes={addOnes}
         />
       ))}
       <div className="btn_container">

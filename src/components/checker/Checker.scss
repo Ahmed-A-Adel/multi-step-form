@@ -26,9 +26,11 @@
     margin-left: auto;
   }
 
-  &:hover,
-  &:active {
+  &:hover {
     border: 1px solid $primary-color;
-    background-color: $Magnolia;
   }
+}
+.active {
+  border: 1px solid $primary-color;
+  background-color: $Magnolia;
 }
