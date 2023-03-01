@@ -3,12 +3,25 @@ function Reducer(state, action) {
   switch (action.type) {
     case "NEXT": {
       action.event.preventDefault();
+      // checking if the current step is on "/" to replace it's position to "/step-1" else if the current step is somthing like step-1 or step-2 et. just incres the step number i.e. current step = "step-2" +1 = "step-3"
       const currentStep =
         state.step === "/" ? "/step-2" : `/step-${+state.step.slice(-1) + 1}`;
-      const vaildData = Validatoer(action.state.userInfo);
-      return vaildData
-        ? { ...state, errorMessage: vaildData }
-        : { ...action.state, step: currentStep, errorMessage: vaildData };
+      // 1- if the current step equales to "/step-5" just return false else if the action.for/the current step data's name is "addones" then return false else return Validatoer with the data that been send by action.state
+      const validData =
+        currentStep === "/step-5"
+          ? false
+          : action.for === "addOnes"
+          ? false
+          : Validatoer(action.state[action.for]);
+      // if validData is true meaning there is an invalid data return the current state with validData assigned to errorMessage, Eles return the data that is send by action.state with the currentStep and ofcourse the valid data
+      return validData
+        ? { ...state, errorMessage: validData }
+        : {
+            ...state,
+            ...action.state,
+            step: currentStep,
+            errorMessage: validData,
+          };
     }
     case "BACK": {
       action.event.preventDefault();

@@ -73,8 +73,8 @@ function Step1() {
             dispatch({
               type: "NEXT",
               event,
+              for: "userInfo",
               state: {
-                ...state,
                 userInfo: formValues,
               },
             })

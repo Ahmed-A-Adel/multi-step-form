@@ -57,7 +57,12 @@ function Step3() {
         </Button>
         <Button
           handleClick={(event) =>
-            dispatch({ type: "NEXT", event, state: { ...state, addOnes } })
+            dispatch({
+              type: "NEXT",
+              event,
+              state: { addOnes },
+              for: "addOnes",
+            })
           }
           className="btn-next btn"
           type="submit"

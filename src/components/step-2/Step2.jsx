@@ -64,7 +64,8 @@ function Step2() {
             dispatch({
               type: "NEXT",
               event,
-              state: { ...state, plane: planeInfo },
+              for: "plane",
+              state: { plane: planeInfo },
             })
           }
           className="btn-next btn"
