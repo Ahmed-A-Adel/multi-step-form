@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import "./Step3.scss";
 import Heading from "../heading/Heading";
 import Checker from "../checker/Checker";
 import { stepsContext } from "../StepsProvider";
 import Button from "../button/Button";
+import "./Step3.scss";
 
 function Step3() {
   const { state, dispatch } = useContext(stepsContext);
@@ -27,7 +27,11 @@ function Step3() {
   ];
   // ___________ Function ___________________________
   const handleChecker = (data) => {
-    setAddOnes([...addOnes, data]);
+    // 1- already exsisted data is coming checked === False ? Remove it.
+    if (!data.checked)
+      return setAddOnes([...addOnes.filter((add) => add.title !== data.title)]);
+    // 2- new data is coming checked === True : Add it.
+    else return setAddOnes([...addOnes, data]);
   };
   // ___________ Function ___________________________
 
@@ -45,7 +49,6 @@ function Step3() {
           price={info.price}
           handleClick={handleChecker}
           subs={state.plane.subs}
-          addOnes={addOnes}
         />
       ))}
       <div className="btn_container">

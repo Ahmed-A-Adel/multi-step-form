@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Checker.scss";
-function Checker({ title, info, price, handleClick, subs, addOnes }) {
+function Checker({ title, info, price, handleClick, subs }) {
   const [check, setCheck] = useState(false);
   const handleCheck = () => {
     setCheck(!check);
     const priceValue = price[subs];
-    !check && handleClick({ title, priceValue });
+    handleClick({ title, priceValue, checked: !check });
   };
   return (
     <div className={`checker ${check ? "active" : ""}`} onClick={handleCheck}>
