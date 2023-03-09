@@ -18,11 +18,13 @@
     display: flex;
     justify-content: space-between;
     color: $secondary-color;
+    font-weight: 600;
     & span {
       font-size: 0.9rem;
     }
   }
   &_add-ones {
+    margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
     color: $Cool-gray;
@@ -36,6 +38,10 @@
     font-size: $f-size;
     color: $Cool-gray;
     margin-bottom: 1rem;
+    transition: $trans;
+    &:hover {
+      color: $primary-color;
+    }
   }
   &_total {
     display: flex;
