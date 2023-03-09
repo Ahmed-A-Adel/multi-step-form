@@ -7,7 +7,7 @@ function Switcher({ handleClick, toggleValue }) {
       <div className="switcher_container">
         <div
           className={`switcher_container_ball ${
-            toggleValue && "switcher_right"
+            toggleValue === "yr" && "switcher_right"
           }`}
         ></div>
       </div>

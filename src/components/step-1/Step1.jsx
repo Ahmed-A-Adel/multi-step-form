@@ -7,14 +7,13 @@ import "./Step1.scss";
 import Button from "../button/Button";
 function Step1() {
   const { dispatch, state } = useContext(stepsContext);
-  const formElements =
-    state.userInfo.name !== ""
-      ? state.userInfo
-      : {
-          name: "",
-          email: "",
-          phone: "",
-        };
+  const formElements = state.userInfo.name
+    ? state.userInfo
+    : {
+        name: "",
+        email: "",
+        phone: "",
+      };
   const [formValues, setFormValues] = useState(formElements);
   const formElementsData = [
     {

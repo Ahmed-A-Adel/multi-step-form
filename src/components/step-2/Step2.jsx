@@ -7,17 +7,19 @@ import Button from "../button/Button";
 import "./Step2.scss";
 function Step2() {
   const { state, dispatch } = useContext(stepsContext);
-  const [toggle, setToggle] = useState(false);
-
-  const [planeInfo, setplaneInfo] = useState({
-    plane: "",
-    subs: "mo",
-    planes: [
-      { name: "arcade", money: { mo: 9, yr: 90 } },
-      { name: "advance", money: { mo: 12, yr: 120 } },
-      { name: "pro", money: { mo: 15, yr: 150 } },
-    ],
-  });
+  const planeInfoState = state.plane.plane
+    ? state.plane
+    : {
+        plane: "",
+        subs: "mo",
+        planes: [
+          { name: "arcade", money: { mo: 9, yr: 90 } },
+          { name: "advance", money: { mo: 12, yr: 120 } },
+          { name: "pro", money: { mo: 15, yr: 150 } },
+        ],
+      };
+  const [planeInfo, setplaneInfo] = useState(planeInfoState);
+  const [toggle, setToggle] = useState(planeInfo.subs);
   // __________________ Function _______________________
   function selectPlane(planeName) {
     const currentPlane = planeInfo.planes.filter(
@@ -26,7 +28,7 @@ function Step2() {
     setplaneInfo({ ...planeInfo, plane: currentPlane[0] });
   }
   function toggleSwitch() {
-    setToggle(!toggle);
+    setToggle(toggle === "mo" ? "yr" : "mo");
     setplaneInfo({ ...planeInfo, subs: planeInfo.subs === "mo" ? "yr" : "mo" });
   }
   // __________________ Function _______________________
