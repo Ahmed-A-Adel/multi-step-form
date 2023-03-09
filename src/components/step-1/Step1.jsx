@@ -6,11 +6,16 @@ import { stepsContext } from "../StepsProvider";
 import "./Step1.scss";
 import Button from "../button/Button";
 function Step1() {
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
+  const { dispatch, state } = useContext(stepsContext);
+  const formElements =
+    state.userInfo.name !== ""
+      ? state.userInfo
+      : {
+          name: "",
+          email: "",
+          phone: "",
+        };
+  const [formValues, setFormValues] = useState(formElements);
   const formElementsData = [
     {
       name: "name",
@@ -40,7 +45,6 @@ function Step1() {
       error: "Format: 20 12345678910",
     },
   ];
-  const { dispatch, state } = useContext(stepsContext);
   // __________ Functions ________________________________
   const handleChange = (e) =>
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
