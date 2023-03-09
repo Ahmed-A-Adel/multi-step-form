@@ -1,4 +1,5 @@
 @import "../app/App.scss";
+$btn-width: 7rem;
 .btn {
   height: auto;
   align-self: flex-end;
@@ -25,7 +26,7 @@
 }
 
 .btn-next {
-  width: 7rem;
+  width: $btn-width;
   margin-left: auto;
 
   background-color: $secondary-color;
@@ -40,6 +41,14 @@
   color: $Cool-gray;
   &:hover {
     color: $secondary-color;
+  }
+}
+.btn-confrim {
+  width: $btn-width;
+  background-color: $primary-color;
+  color: $White;
+  &:hover {
+    opacity: 0.8;
   }
 }
 @media screen and (max-width: 1139px) {

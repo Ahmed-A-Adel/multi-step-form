@@ -35,10 +35,10 @@ function Step4() {
         </Button>
         <Button
           handleClick={(event) => dispatch({ type: "NEXT", event, state })}
-          className="btn-next btn"
+          className="btn-confrim btn"
           type="submit"
         >
-          next step
+          confirm
         </Button>
       </div>
     </div>
