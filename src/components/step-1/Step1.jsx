@@ -51,44 +51,41 @@ function Step1() {
 
   // __________ Functions ________________________________
   return (
-    <div className="step step-1">
+    <form
+      className="form step step-1"
+      onSubmit={(event) =>
+        dispatch({
+          type: "NEXT",
+          event,
+          for: "userInfo",
+          state: {
+            userInfo: formValues,
+          },
+        })
+      }
+    >
       <Heading
         heading={" Personal info"}
         subHeading={
           " Please provide your name, email address, and phone number."
         }
       />
-      <form className="form">
-        {formElementsData.map((input) => (
-          <FormInput
-            input={input}
-            handleChange={handleChange}
-            formValues={formValues}
-            key={input.name}
-            dispatch={dispatch}
-            state={state}
-          />
-        ))}
-      </form>
+      {formElementsData.map((input) => (
+        <FormInput
+          input={input}
+          handleChange={handleChange}
+          formValues={formValues}
+          key={input.name}
+          dispatch={dispatch}
+          state={state}
+        />
+      ))}
       <div className="btn_container">
-        <Button
-          handleClick={(event) =>
-            dispatch({
-              type: "NEXT",
-              event,
-              for: "userInfo",
-              state: {
-                userInfo: formValues,
-              },
-            })
-          }
-          className="btn-next btn"
-          type="submit"
-        >
+        <Button className="btn-next btn" type="submit">
           next step
         </Button>
       </div>
-    </div>
+    </form>
   );
 }
 
