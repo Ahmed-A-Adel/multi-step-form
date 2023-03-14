@@ -1,9 +1,12 @@
 {
   "name": "multi-step-form-main",
+  "homepage": "https://Ahmed-A-Adel.github.io/",
   "version": "1.0.0",
   "description": "![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d  build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test"
@@ -29,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
